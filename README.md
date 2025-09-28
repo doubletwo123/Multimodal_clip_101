@@ -43,9 +43,9 @@ minist_clip/
 - 训练结果和日志保存在 `runs/` 目录下，可以使用 TensorBoard
 - 推理结果保存在 `inference_test/` 目录下，包含图像与文本的相似度矩阵可视化。
 - 项目依赖于 PyTorch 和 torchvision 等深度学习库，具体依赖项列在 `requirements.txt` 文件中。
-- PS: 该项目仅用于学习和研究目的，数据集使用的是 MNIST，模型结构较为简单，实际应用中可能需要更复杂的模型和更大规模的数据集。
+- PS: 该项目仅用于学习目的，数据集使用的是 MNIST，模型结构较为简单，实际应用中可能需要更复杂的模型和更大规模的数据集。
 - 实际上，这里针对文本这里进行了简化，只使用了数字标签作为文本输入，在实际应用中应当使用更复杂的文本描述，例如将标签嵌入到更丰富的文本中。例如，将标签 "0" 转换为 "This is a handwritten digit 0." 以提供更多的上下文信息。则需要对于文本编码器进行更复杂的设计。
-- ,将数字标签映射到单词，并将单词嵌入到随机一个文本模板中，采用albert-base-v2进行句子的编码，随后采用了平均池化、L2归一化等操作， 得到文本的特征向量 
+- 我们也text_encoder_plus.py中给出了一个简单的demo，具体流程是将数字标签映射到单词，并将单词嵌入到随机一个文本模板中，采用albert-base-v2进行句子的编码，随后采用了平均池化、L2归一化等操作， 得到文本的特征向量 
 ## 参考
   - [BERT的youxiu变体：ALBERT论文图解介绍](http://zhuanlan.zhihu.com/p/142416395)
   - [CLIP 论文逐段精读【论文精读】](https://www.bilibili.com/video/BV1SL4y1s7LQ/?spm_id_from=333.337.search-card.all.click)
